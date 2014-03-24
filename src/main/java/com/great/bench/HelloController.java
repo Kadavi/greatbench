@@ -10,6 +10,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.MultipartHttpServletRequest;
@@ -49,9 +50,9 @@ public class HelloController {
 
 
 
-        Future<String> result = us.processImage("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/psyduck.jpg");
+        //Future<String> result = us.processImage("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/psyduck.jpg");
 
-        model.addAttribute("message", result.get());
+        //model.addAttribute("message", result.get());
 
 
         return "hello";
@@ -59,7 +60,9 @@ public class HelloController {
     }
 
     @RequestMapping(method = RequestMethod.POST)
-    public @ResponseBody String printUpload(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+    public @ResponseBody String printUpload(HttpServletRequest req, HttpServletResponse resp,
+                                            @RequestParam(value = "email", required = false) String email,
+                                            @RequestParam(value = "key", required = false) String key) throws Exception {
 
         if (!(req instanceof MultipartHttpServletRequest)) throw new Exception();
 
@@ -73,9 +76,12 @@ public class HelloController {
         IOUtils.copy(files.get("fileupload").getInputStream(), output);
 
         Future<String> result = us.processImage("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/" + files.get("fileupload").getOriginalFilename());
+        String response = result.get();
 
+        if (response == null)
+            System.out.println("wiffy");
 
-        return result.get();
+        return response;
 
     }
 }
