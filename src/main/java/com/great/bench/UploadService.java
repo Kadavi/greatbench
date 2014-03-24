@@ -56,7 +56,6 @@ public class UploadService
 
         Core.inRange(src, new Scalar(15,25,150), new Scalar(65,80,240), triangleResult); // Red masses
 
-
         //Highgui.imwrite("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/triangleResult.jpg", triangleResult);
 
         int iCannyUpperThreshold = 20;

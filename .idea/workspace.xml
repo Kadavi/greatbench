@@ -2,8 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59a4df75-75c3-4fce-8d76-03319a6a85a9" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/src/test/java/com/great/bench/sight.jpg" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/great/bench/HelloController.java" afterPath="$PROJECT_DIR$/src/main/java/com/great/bench/HelloController.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/java/com/great/bench/UploadService.java" afterPath="$PROJECT_DIR$/src/main/java/com/great/bench/UploadService.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
@@ -81,7 +79,7 @@
       <file leaf-file-name="UploadService.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/great/bench/UploadService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="22" selection-start="4634" selection-end="4634" vertical-scroll-proportion="0.5191919" vertical-offset="1817" max-vertical-offset="2516">
+            <state line="57" column="0" selection-start="2127" selection-end="2127" vertical-scroll-proportion="-1.5757576" vertical-offset="1596" max-vertical-offset="2499">
               <folding />
             </state>
           </provider>
@@ -661,7 +659,7 @@
       <workItem from="1394777735319" duration="5728000" />
       <workItem from="1395611591174" duration="2396000" />
       <workItem from="1395615223484" duration="9688000" />
-      <workItem from="1395684937355" duration="1498000" />
+      <workItem from="1395684937355" duration="1558000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed post upload call to return simple response body.">
       <created>1394523027112</created>
@@ -687,11 +685,15 @@
       <created>1395679326132</created>
       <updated>1395679326132</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Removed image saves and system outs.">
+      <created>1395687235756</created>
+      <updated>1395687235756</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43630000" />
+    <option name="totallyTimeSpent" value="43690000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="870" height="860" extended-state="0" />
@@ -781,7 +783,8 @@
     <MESSAGE value="Returns simple comma delimited points when a clickable spot is found." />
     <MESSAGE value="init" />
     <MESSAGE value="init&#10;" />
-    <option name="LAST_COMMIT_MESSAGE" value="init&#10;" />
+    <MESSAGE value="Removed image saves and system outs." />
+    <option name="LAST_COMMIT_MESSAGE" value="Removed image saves and system outs." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager />
@@ -955,7 +958,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/great/bench/UploadService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="22" selection-start="4634" selection-end="4634" vertical-scroll-proportion="0.5191919" vertical-offset="1817" max-vertical-offset="2516">
+        <state line="57" column="0" selection-start="2127" selection-end="2127" vertical-scroll-proportion="-1.5757576" vertical-offset="1596" max-vertical-offset="2499">
           <folding />
         </state>
       </provider>
