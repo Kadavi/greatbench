@@ -44,7 +44,7 @@ public class UploadService
 
         Imgproc.GaussianBlur(circleResult, circleResult, new Size(7, 7), 7);
 
-        Highgui.imwrite("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/circleResultOne.jpg", circleResult);
+        //Highgui.imwrite("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/circleResultOne.jpg", circleResult);
 
         Core.inRange(src, new Scalar(210,210,230), new Scalar(235,235,240), triangleResult); // White circles
 
@@ -52,12 +52,12 @@ public class UploadService
 
         Core.addWeighted(circleResult, 1.0, triangleResult, 1.0, 50.0, circleResult);
 
-        Highgui.imwrite("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/circleResultTwo.jpg", circleResult);
+        //Highgui.imwrite("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/circleResultTwo.jpg", circleResult);
 
         Core.inRange(src, new Scalar(15,25,150), new Scalar(65,80,240), triangleResult); // Red masses
 
 
-        Highgui.imwrite("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/triangleResult.jpg", triangleResult);
+        //Highgui.imwrite("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/triangleResult.jpg", triangleResult);
 
         int iCannyUpperThreshold = 20;
         int iMinDistance = 20;
@@ -82,7 +82,7 @@ public class UploadService
 
                 Core.circle(dst, pt, radius, new Scalar(255, 255, 255), 1);
                 totalCircles.add(pt);
-                System.out.println("Circle: " + pt);
+                //System.out.println("Circle: " + pt);
 
             }
         }
@@ -112,7 +112,7 @@ public class UploadService
                 totalTriangles.add(new Point(averageCenterX / approx.toList().size(),
                         averageCenterY / approx.toList().size()));
 
-                System.out.println("Triangle: " + approx.toList());
+                //System.out.println("Triangle: " + approx.toList());
 
             }
 
@@ -129,7 +129,7 @@ public class UploadService
 
                 if (Math.abs(distanceX) < 10 && Math.abs(distanceY) < 10) {
 
-                    Highgui.imwrite("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/WEESALTS.jpg", dst);
+                    //Highgui.imwrite("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/WEESALTS.jpg", dst);
 
                     /*
                     result = "\nMatch!\n" +

@@ -48,12 +48,8 @@ public class HelloController {
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(ModelMap model) throws ExecutionException, InterruptedException {
 
-
-
         //Future<String> result = us.processImage("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/psyduck.jpg");
-
         //model.addAttribute("message", result.get());
-
 
         return "hello";
 
@@ -64,13 +60,6 @@ public class HelloController {
                                             @RequestParam(value = "email", required = false) String email,
                                             @RequestParam(value = "key", required = false) String key) throws Exception {
 
-        if (!(req instanceof MultipartHttpServletRequest)) throw new Exception();
-
-        Date date = new Date();
-
-        System.out.println(dateFormat.format(date));
-
-        System.out.println(System.currentTimeMillis());
         Map<String, MultipartFile> files = ((MultipartHttpServletRequest) req).getFileMap();
         OutputStream output = new FileOutputStream("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/" + files.get("fileupload").getOriginalFilename());
         IOUtils.copy(files.get("fileupload").getInputStream(), output);
@@ -78,8 +67,10 @@ public class HelloController {
         Future<String> result = us.processImage("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/" + files.get("fileupload").getOriginalFilename());
         String response = result.get();
 
-        if (response == null)
-            System.out.println("wiffy");
+        System.out.println(dateFormat.format(new Date()));
+
+        if (response == null) System.out.println("wiffy");
+        else System.out.println("yay");
 
         return response;
 
