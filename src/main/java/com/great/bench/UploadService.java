@@ -29,9 +29,6 @@ public class UploadService
                 totalTriangles = new ArrayList();
 
         Mat src = Highgui.imread(path, CvType.CV_32FC4);
-        //src = src.submat(new Rect(320, 320, 300, 300));
-
-        //Highgui.imwrite("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/cropped.jpg", src);
 
         Mat circles = new Mat();
 

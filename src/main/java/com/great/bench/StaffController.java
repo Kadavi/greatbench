@@ -11,8 +11,10 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
@@ -107,7 +109,8 @@ public class StaffController {
     }
 
     @RequestMapping(value = "/api/login", method = RequestMethod.POST)
-    public ModelAndView login(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+    public @ResponseBody
+    String login(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 
         String email = req.getParameter("email");
         String password = req.getParameter("password");
@@ -116,21 +119,15 @@ public class StaffController {
         WriteResult mangoResult = mango.updateFirst(new Query(Criteria.where("email").is(email).and("password").is(password)),
                 Update.update("sessionToken", sessionToken), Member.class);
 
-        Map<String, Object> response = new HashMap<String, Object>();
-
         if (mangoResult.getN() > 0) {
 
-            response.put("sessionToken", sessionToken);
-            response.put("status", "success");
+            return "SessionToken: " + sessionToken;
 
         } else {
 
-            response.put("status", "error");
+            return "error";
 
         }
-
-        return new ModelAndView("hello", response);
-
     }
 
     @RequestMapping(value = "/api/logout", method = RequestMethod.POST)
