@@ -112,6 +112,11 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
   </component>
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
@@ -817,7 +822,7 @@
       <workItem from="1396835475835" duration="271000" />
       <workItem from="1396845791325" duration="1485000" />
       <workItem from="1396851062750" duration="414000" />
-      <workItem from="1396851487901" duration="3498000" />
+      <workItem from="1396851487901" duration="3687000" />
     </task>
     <task id="LOCAL-00001" summary="Fixed post upload call to return simple response body.">
       <created>1394523027112</created>
@@ -851,11 +856,19 @@
       <created>1396854906380</created>
       <updated>1396854906380</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Ported to Fedora.">
+      <created>1396855043598</created>
+      <updated>1396855043598</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Ported to Fedora.">
+      <created>1396855113018</created>
+      <updated>1396855113018</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="76953000" />
+    <option name="totallyTimeSpent" value="77142000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="27" width="960" height="824" extended-state="0" />
