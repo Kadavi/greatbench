@@ -14,7 +14,7 @@ import java.util.concurrent.Future;
 @Service
 public class UploadService
 {
-    static { System.load("C:/Users/Grant Dawson/Documents/opencv/build/java/x64/opencv_java246.dll"); }
+    static { System.load("/home/kadavisavage/greatbench/lib/libopencv_java247.so"); }
 
     @Async
     public Future<String> processImage(String path)

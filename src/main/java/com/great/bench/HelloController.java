@@ -38,8 +38,10 @@ public class HelloController {
     @RequestMapping(method = RequestMethod.GET)
     public String printWelcome(ModelMap model) throws ExecutionException, InterruptedException {
 
-        //Future<String> result = us.processImage("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/psyduck.jpg");
+        Future<String> result = us.processImage("/home/kadavisavage/greatbench/src/test/java/com/great/bench/sample.jpg");
         //model.addAttribute("message", result.get());
+
+        System.out.println(result.get());
 
         return "hello";
 
