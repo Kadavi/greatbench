@@ -10,6 +10,7 @@ import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
+import org.springframework.mail.javamail.JavaMailSenderImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -78,6 +79,8 @@ public class StaffController {
 
         String email = req.getParameter("email");
 
+        // TODO: Validate token before critical operations
+
         Member member = mango.findOne(new Query(Criteria.where("email").is(email)), Member.class);
 
         Subscription subscription = Customer.retrieve(member.stripeId).cancelSubscription();
@@ -109,7 +112,8 @@ public class StaffController {
     }
 
     @RequestMapping(value = "/api/login", method = RequestMethod.POST)
-    public @ResponseBody
+    public
+    @ResponseBody
     String login(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 
         String email = req.getParameter("email");
@@ -131,7 +135,7 @@ public class StaffController {
     }
 
     @RequestMapping(value = "/api/logout", method = RequestMethod.POST)
-     public ModelAndView logout(HttpServletRequest req, HttpServletResponse resp) throws Exception {
+    public ModelAndView logout(HttpServletRequest req, HttpServletResponse resp) throws Exception {
 
         String email = req.getParameter("email");
 

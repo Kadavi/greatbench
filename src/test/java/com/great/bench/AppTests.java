@@ -151,11 +151,6 @@ public class AppTests {
     }
 
     @Test()
-    public void validatePlanSettings() {
-
-    }
-
-    @Test()
     public void uploadImage() {
 
         Response result = null;
@@ -185,47 +180,6 @@ public class AppTests {
 
     }
 
-    @Test()
-    public void DetectCircle() {
-
-        Mat src = Highgui.imread("src/test/java/com/great/bench/circles.jpeg", CvType.CV_8UC1);
-
-        Mat circles = new Mat();
-
-        Mat dst = Mat.zeros(src.size(), CvType.CV_8UC1);
-
-        int iCannyUpperThreshold = 300;
-        int iMinDistance = 100;
-        int iMinRadius = 100;
-        int iMaxRadius = 500;
-        int iAccumulator = 50;
-
-        Imgproc.HoughCircles(src, circles, Imgproc.CV_HOUGH_GRADIENT,
-                1, iMinDistance, iCannyUpperThreshold, iAccumulator,
-                iMinRadius, iMaxRadius);
-
-        if (circles.cols() > 0) {
-            for (int x = 0; x < circles.cols(); x++)
-            {
-                double vCircle[] = circles.get(0,x);
-
-                if (vCircle == null)
-                    break;
-
-                Point pt = new Point(Math.round(vCircle[0]), Math.round(vCircle[1]));
-                int radius = (int)Math.round(vCircle[2]);
-
-                // draw the found circle
-                Core.circle(dst, pt, radius, new Scalar(255,255,255), 10);
-            }
-        }
-
-        Highgui.imwrite("src/test/java/com/great/bench/YOW.jpg", dst);
-
-        //System.out.println(dst.dump());
-
-    }
-
     @Before
     public void setup() {
 
@@ -237,12 +191,7 @@ public class AppTests {
 
     }
 
-    private MockMvc mockMvc;
-
-    @SuppressWarnings("SpringJavaAutowiringInspection")
-    @Autowired
-    protected WebApplicationContext wac;
-
+    // Generates random email string for MongoDB to store fake accounts for testing
     public String randomEmail() {
 
         final String LOTTO_POOL = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
@@ -259,5 +208,11 @@ public class AppTests {
         return bob.toString() + "@email.com";
 
     }
+
+    private MockMvc mockMvc;
+
+    @SuppressWarnings("SpringJavaAutowiringInspection")
+    @Autowired
+    protected WebApplicationContext wac;
 
 }

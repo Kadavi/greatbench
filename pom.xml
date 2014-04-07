@@ -8,7 +8,7 @@
     <name>greatbench</name>
 
     <properties>
-        <spring.version>4.0.2.RELEASE</spring.version>
+        <spring.version>4.0.3.RELEASE</spring.version>
     </properties>
 
     <dependencies>

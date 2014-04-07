@@ -19,7 +19,6 @@ public class UploadService
     @Async
     public Future<String> processImage(String path)
     {
-
         return new AsyncResult<String>(DetectCircle(path));
     }
 
@@ -114,8 +113,6 @@ public class UploadService
 
         }
 
-        String result = null;
-
         for (int i = 0; i < totalCircles.size(); i++) {
 
             for (int j = 0; j < totalTriangles.size(); j++) {
@@ -133,16 +130,13 @@ public class UploadService
                              "(Triangle) " + totalTriangles.get(j).x + " " + totalTriangles.get(j).y;
                     */
 
-                    result = totalCircles.get(i).x + "," + totalCircles.get(i).y;
-
-                    break;
-
+                    return totalCircles.get(i).x + "," + totalCircles.get(i).y;
                 }
 
             }
 
         }
 
-        return result;
+        return null;
     }
 }
