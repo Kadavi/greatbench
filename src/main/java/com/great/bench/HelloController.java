@@ -53,10 +53,10 @@ public class HelloController {
                                             @RequestParam(value = "key", required = false) String key) throws Exception {
 
         Map<String, MultipartFile> files = ((MultipartHttpServletRequest) req).getFileMap();
-        OutputStream output = new FileOutputStream("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/" + files.get("fileupload").getOriginalFilename());
+        OutputStream output = new FileOutputStream("/home/kadavisavage/greatbench/src/test/java/com/great/bench/" + files.get("fileupload").getOriginalFilename());
         IOUtils.copy(files.get("fileupload").getInputStream(), output);
 
-        Future<String> result = us.processImage("C:/Users/Grant Dawson/IdeaProjects/greatbench/src/test/java/com/great/bench/" + files.get("fileupload").getOriginalFilename());
+        Future<String> result = us.processImage("/home/kadavisavage/greatbench/src/test/java/com/great/bench/" + files.get("fileupload").getOriginalFilename());
         String response = result.get();
 
         System.out.println(dateFormat.format(new Date()));
