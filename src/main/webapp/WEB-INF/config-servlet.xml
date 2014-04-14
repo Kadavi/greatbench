@@ -19,8 +19,11 @@
         <property name="defaultEncoding" value="UTF-8" />
     </bean>
 
-    <mongo:mongo host="127.0.0.1" port="27017" />
-    <mongo:db-factory id="mongoDbFactory" dbname="testdb" />
+    <mongo:db-factory id="mongoDbFactory" host="oceanic.mongohq.com"
+                                          port="10049"
+                                          dbname="testdb"
+                                          username="Kadavi"
+                                          password="grantdawsoN1"/>
 
     <bean id="mongoTemplate" class="org.springframework.data.mongodb.core.MongoTemplate">
         <constructor-arg name="mongoDbFactory" ref="mongoDbFactory" />
